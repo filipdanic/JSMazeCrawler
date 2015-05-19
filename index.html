@@ -1,0 +1,30 @@
+<!doctype>
+<html>
+	<head>
+		<script type="text/javascript" src="src/robot.js"></script>
+		<script type="text/javascript" src="src/maze.js"></script>
+		<script type="text/javascript" src="src/mazespace.js"></script>
+
+		<script type="text/javascript">
+			/*I use 0-based indexing */
+			/*Create our maze  and set dimensions, starting position and exist*/
+			myMaze = new Maze (6, 6);
+			myMaze.setStart(1,1,"north");
+			myMaze.setExit(5,5);
+			/*Create walls*/
+			myMaze.setWall(2,4,"north");
+			myMaze.setWall(1,2,"east");
+			myMaze.setWall(1,3,"east");
+			myMaze.setWall(1,4,"east");
+			myMaze.setWall(1,5,"east");
+			/*Create Robot */
+			myRobot = new Robot();
+			myRobot.setMaze(myMaze);
+			/*Tell the robot to find a solution*/
+			myRobot.exitMaze();
+		</script>
+	</head>
+
+	<body>
+	</body>
+</html>
